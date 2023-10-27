@@ -2,4 +2,5 @@
 knowledgebase and all tha blues baby. 
 
 ## Knowledge Base Index
-- [Getting Started](docs/Getting_Started.md)
+- Freeradius Guides
+- [FreeRADIUS AAA w/ LDAP/AD/Samba](docs/freeradius/md)
