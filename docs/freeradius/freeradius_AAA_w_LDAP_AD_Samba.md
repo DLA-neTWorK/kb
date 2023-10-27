@@ -1,6 +1,6 @@
 # Comprehensive Guide to Setting Up FreeRADIUS with LDAP/AD/Samba and NAS Devices
 
-## Table of Contents
+# Table of Contents
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
@@ -11,20 +11,20 @@
 - [Troubleshooting](#troubleshooting)
 - [Conclusion](#conclusion)
 
-### Introduction
+# Introduction
 This guide provides steps to configure FreeRADIUS for user authentication via LDAP/AD/Samba and to interact with different Network Access Servers (NAS) like MikroTik and Juniper.
 
-#### Prerequisites
+# Prerequisites
 - A working FreeRADIUS installation
 - Access to LDAP/AD/Samba server
 - NAS devices (MikroTik, Juniper, etc.)
 
-##### Installation
+# Installation
 Install FreeRADIUS and its LDAP modules...
 ``` bash
 sudo apt-get install freeradius freeradius-ldap
 ```
-###### LDAP/AD/Samba Integration
+# LDAP/AD/Samba Integration
 Edit the /etc/freeradius/3.0/mods-enabled/ldap file and configure the LDAP settings...
 ``` bash
 ldap {
@@ -34,7 +34,7 @@ ldap {
   ...
 }
 ```
-####### Configuring clients.conf
+# Configuring clients.conf
 Add your NAS devices in /etc/freeradius/3.0/clients.conf...
 ``` bash
 client 192.168.1.0/24 {
@@ -44,7 +44,7 @@ client 192.168.1.0/24 {
   nastype = other
 }
 ```
-######## Configuring sites-enabled/default
+# Configuring sites-enabled/default
 Edit /etc/freeradius/3.0/sites-enabled/default to include logic based on LDAP groups and NAS types...
 ``` bash
 server default {
@@ -122,15 +122,15 @@ server default {
     }
 }
 ```
-########## Verification Commands
+# Verification Commands
 #MikroTik
 Use MikroTik-specific commands to verify RW or RO access.
 ##Juniper
 RW: configure followed by set system login message "Test RW access" and rollback.
 RO: show system uptime.
 
-########### Troubleshooting
+# Troubleshooting
 
-############Conclusion
+# Conclusion
 This guide provides a comprehensive overview of setting up FreeRADIUS with LDAP/AD/Samba integration and NAS devices...
 
