@@ -6,7 +6,7 @@
 - [Installation](#installation)
 - [LDAP/AD/Samba Integration](#ldapadsamba-integration)
 - [Configuring clients.conf](#configuring-clientsconf)
-- [Configuring sites-enabled/default](#configuring-sites-enabledefault)
+- [Configuring sites-enabled/default](#configuring-sites-enable-default)
 - [Verification Commands](#verification-commands)
 - [Troubleshooting](#troubleshooting)
 - [Conclusion](#conclusion)
@@ -34,7 +34,7 @@ ldap {
   ...
 }
 ```
-# Configuring "clients.conf"
+# Configuring clients.conf
 Add your NAS devices in /etc/freeradius/3.0/clients.conf...
 ``` bash
 client 192.168.1.0/24 {
@@ -44,7 +44,7 @@ client 192.168.1.0/24 {
   nastype = other
 }
 ```
-# Configuring "sites-enabled/default"
+# Configuring sites-enabled default
 Edit /etc/freeradius/3.0/sites-enabled/default to include logic based on LDAP groups and NAS types...
 ``` bash
 server default {
