@@ -6,7 +6,7 @@
 - [Installation](#installation)
 - [LDAP/AD/Samba Integration](#ldapadsamba-integration)
 - [Configuring clients.conf](#configuring-clientsconf)
-- [Configuring sites-enabled default](#configuring-sites-enable-default)
+- [Configuring sites-enabled default](#configuring-sites-enabled-default)
 - [Verification Commands](#verification-commands)
 - [Troubleshooting](#troubleshooting)
 - [Conclusion](#conclusion)
