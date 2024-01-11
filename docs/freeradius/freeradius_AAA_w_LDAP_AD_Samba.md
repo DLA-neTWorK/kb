@@ -1,29 +1,17 @@
 # Comprehensive Guide to Setting Up FreeRADIUS with LDAP/AD/Samba and NAS Devices
 
-# Table of Contents
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Certs](#certs)
-- [Installation](#installation)
-- [AD/Samba Integration](#ldapadsamba-integration)
-- [Configuring clients.conf](#configuring-clientsconf)
-- [Configuring sites-enabled default](#configuring-sites-enabled-default)
-- [Verification Commands](#verification-commands)
-- [Troubleshooting](#troubleshooting)
-- [Conclusion](#conclusion)
-
 # Introduction
 This guide provides steps to configure FreeRADIUS for user authentication via LDAP/AD/Samba and to interact with different Network Access Servers (NAS) like MikroTik and Juniper.
 
 # Prerequisites
 - A working FreeRADIUS installation
-  # Certs
+# Certs
 - Download cambium certs from https://support.cambiumnetworks.com/file/c73b92e64bbea7239e19f59c4e29dff361d2cf6a and place the contents ...
   private key password = /etc/freeradius/certs/serverpassword.txt
   private key = /etc/freeradius/certs/aaasvr_key.pem
   certificate file = /etc/freeradius/certs/aaasvr_cert.pem
   ca file = /etc/freeradius/certs/cacert_aaasvr.pem
-  # Dictionary
+# Dictionary
   Download dictionary.canopy file https://support.cambiumnetworks.com/file/0cf0506f9b5dbe327c5786fc4dc84402524b8b79 and place the file in /usr/share/freeradius/
   vi /usr/share/freeradius/dictionary and add reference to dictionary.canopy
   ``` bash
