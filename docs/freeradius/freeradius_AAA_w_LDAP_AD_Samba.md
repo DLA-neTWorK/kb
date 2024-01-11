@@ -6,19 +6,29 @@ This guide provides steps to configure FreeRADIUS for user authentication via LD
 # Prerequisites
 - A working FreeRADIUS installation
 # Certs
-- Download cambium certs from https://support.cambiumnetworks.com/file/c73b92e64bbea7239e19f59c4e29dff361d2cf6a and place the contents ...
-  private key password = /etc/freeradius/certs/serverpassword.txt
-  private key = /etc/freeradius/certs/aaasvr_key.pem
-  certificate file = /etc/freeradius/certs/aaasvr_cert.pem
+- Download Cambium certificates from Cambium Networks and place the contents in the respective directories: https://support.cambiumnetworks.com/file/c73b92e64bbea7239e19f59c4e29dff361d2cf6a
+#
+  private key password = /etc/freeradius/certs/serverpassword.txt \
+  private key = /etc/freeradius/certs/aaasvr_key.pem \
+  certificate file = /etc/freeradius/certs/aaasvr_cert.pem \
   ca file = /etc/freeradius/certs/cacert_aaasvr.pem
 # Dictionary
-  Download dictionary.canopy file https://support.cambiumnetworks.com/file/0cf0506f9b5dbe327c5786fc4dc84402524b8b79 and place the file in /usr/share/freeradius/
-  vi /usr/share/freeradius/dictionary and add reference to dictionary.canopy
-  ``` bash
-  $INCLUDE dictionary.canopy
-  ```
+- Download dictionary.canopy file and place the file in the respective directories: https://support.cambiumnetworks.com/file/0cf0506f9b5dbe327c5786fc4dc84402524b8b79
+ # 
+``` bash
+cp dictionary.canopy /usr/share/freeradius/dictionary.canopy
+``` 
+``` bash
+vi /usr/share/freeradius/dictionary
+```
+and add a reference to dictionary.canopy file 
+``` bash
+$INCLUDE dictionary.canopy
+```
 # AD/Samba Integration
+``` bash
 vi /etc/samba/smb.conf
+```
 ``` bash
 [global]
    workgroup = WORKGROUP
@@ -58,7 +68,9 @@ vi /etc/samba/smb.conf
    winbind nested groups = yes
 ```
 # LDAP
+``` bash
 vi /etc/freeradius/mods-enabled/ldap 
+```
 ``` bash
 ldap {
         server = '192.168.10.78'
@@ -151,7 +163,9 @@ ldap {
   
 ```
 # MSCHAP
+``` bash
 vi /etc/freeradius/mods-enabled/mschap
+```
 ``` bash
 mschap {
         use_mppe = yes
@@ -174,7 +188,9 @@ mschap {
 }
 ```
 # EAP
+``` bash
 vi /etc/freeradius/mods-enabled/eap
+```
 ``` bash
 eap {
         default_eap_type = peap
@@ -237,7 +253,9 @@ eap {
 }
 ```
 # Clients
-Add your NAS devices in /etc/freeradius/clients.conf...
+``` bash
+vi /etc/freeradius/clients.conf
+```
 ``` bash
 client 192.168.1.0/24 {
   ipaddr = 192.168.1.0/24
@@ -246,7 +264,9 @@ client 192.168.1.0/24 {
 }
 ```
 # sites-enabled default
-Edit /etc/freeradius/sites-enabled/default to include logic based on LDAP groups and NAS types...
+``` bash
+vi /etc/freeradius/sites-enabled/default 
+```
 ``` bash
 server default {
 listen {
