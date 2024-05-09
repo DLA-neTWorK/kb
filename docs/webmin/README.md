@@ -26,8 +26,10 @@ https://fqdn:10000
 ## References
 [Webmin Download Page](https://webmin.com/download/)
 
+![Webmin Version](https://img.shields.io/github/v/tag/webmin/webmin?label=version&style=social)
+
 [Webmin GitHub Repository](https://github.com/webmin/webmin/)
 
 ![Last commit](https://img.shields.io/github/last-commit/webmin/webmin?style=social) 
-![Webmin Version](https://img.shields.io/github/v/tag/webmin/webmin?label=version&style=social)
+
 
