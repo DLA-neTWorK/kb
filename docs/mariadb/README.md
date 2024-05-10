@@ -16,6 +16,12 @@ Start and enable MariaDB service:
 systemctl start mariadb &&
 systemctl enable mariadb
 ```
+
+## UFW 
+
+```bash
+if ! ufw status | grep -q '3306/tcp'; then ufw allow 3306/tcp; fi
+```
 ## References
 - [MariaDB Download Page](https://mariadb.org/download/)
 - ![MariaDB Version](https://img.shields.io/github/v/tag/mariadb/server?label=version&style=social)
