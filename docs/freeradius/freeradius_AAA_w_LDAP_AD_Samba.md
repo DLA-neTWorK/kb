@@ -6,14 +6,16 @@ This guide provides steps to configure FreeRADIUS for user authentication via LD
 # Prerequisites
 - A working FreeRADIUS installation
 # Certs
-- Download Cambium certificates from Cambium Networks and place the contents in the respective directories: https://support.cambiumnetworks.com/file/c73b92e64bbea7239e19f59c4e29dff361d2cf6a
+- Download Cambium certificates from Cambium Networks and place the contents in the respective directories:
+  https://support.cambiumnetworks.com/file/0cf0506f9b5dbe327c5786fc4dc84402524b8b79
 #
   private key password = /etc/freeradius/certs/serverpassword.txt \
   private key = /etc/freeradius/certs/aaasvr_key.pem \
   certificate file = /etc/freeradius/certs/aaasvr_cert.pem \
   ca file = /etc/freeradius/certs/cacert_aaasvr.pem
 # Dictionary
-- Download dictionary.canopy file and place the file in the respective directories: https://support.cambiumnetworks.com/file/0cf0506f9b5dbe327c5786fc4dc84402524b8b79
+- Download dictionary.canopy file and place the file in the respective directories:
+  https://support.cambiumnetworks.com/file/c73b92e64bbea7239e19f59c4e29dff361d2cf6a 
  # 
 ``` bash
 cp dictionary.canopy /usr/share/freeradius/dictionary.canopy
